@@ -1,0 +1,16 @@
+<table>
+	<thead>
+		<tr>
+			<th>제목</th>
+			<th>작성자</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @songs.each do |song| %>
+			<tr>
+				<td><%= song.title %></td>
+				<td><%= song.user.name %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
