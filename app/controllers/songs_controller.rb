@@ -1,12 +1,12 @@
 class SongsController < ApplicationController
 	before_action :authenticate_user!, except: :index
+	before_action :set_song, only: [ :show, :edit, :update, :destroy ]
 
 	def index
 		@songs = Song.all
 	end
 
 	def show
-		@song = Song.find(params[:id])
 	end
 
 	def new
@@ -33,4 +33,10 @@ class SongsController < ApplicationController
 	def destroy
 	end
 
+	private
+
+
+	def set_song
+		@song = Song.find(params[:id])
+	end
 end
