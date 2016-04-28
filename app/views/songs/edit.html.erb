@@ -1,0 +1,6 @@
+<%= simple_form_for(@song) do |f| %>
+	<%= f.input :title %>
+	<%= f.input :description %>
+
+	<%= f.submit "수정사항 반영하기", class: "btn btn-primary" %>
+<% end %>
