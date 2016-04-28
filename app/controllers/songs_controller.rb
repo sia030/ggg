@@ -17,7 +17,7 @@ class SongsController < ApplicationController
 	end
 
 	def create
-		@song = Song.new(params.require(:song).permit(:title, :description))
+		@song = Song.new(song_params)
 		@song.user = current_user
 		
 		if @song.save
@@ -35,6 +35,9 @@ class SongsController < ApplicationController
 
 	private
 
+	def song_params
+		params.require(:song).permit(:title, :description)
+	end
 
 	def set_song
 		@song = Song.find(params[:id])
