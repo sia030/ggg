@@ -1,4 +1,7 @@
 <h3><%= @song.title %></h3>
 <h5>작성자: <%= @song.user.name %></h3>
 <p><%= @song.description %></p>
+
+<%= link_to "수정하기", edit_song_path(@song) %>
 <%= link_to "삭제하기", song_path(@song), method: :delete %>
+<%= link_to "목록보기", songs_path %>
